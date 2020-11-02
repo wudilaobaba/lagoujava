@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="201a2c41-1c92-44b1-9fb0-74b29757e755" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="lagou@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="lagou@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="lagou@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="lagou: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hJA5F5Kqt27bjQ2nhEHIDG8U1C" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../day01/javacode03" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="Console" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\mySorce\lagoujava\day04\javacode07\src\main\resources\com\whj\mapper" />
+      <recent name="D:\mySorce\lagoujava\day04\javacode07\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TestWhj.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="javacode07" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whj.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.whj.test" />
+      <option name="MAIN_CLASS_NAME" value="com.whj.test.TestWhj" />
+      <option name="METHOD_NAME" value="test01" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestWhj.test01" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.13549832" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:lagou@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:lagou@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@57f25e13" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="201a2c41-1c92-44b1-9fb0-74b29757e755" name="Default Changelist" comment="" />
+      <created>1599718635773</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599718635773</updated>
+      <workItem from="1599718638629" duration="11958000" />
+      <workItem from="1599748844251" duration="1051000" />
+      <workItem from="1599785637587" duration="6010000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="583" y="198" key="#Project_Structure" timestamp="1599719165827">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="583" y="198" key="#Project_Structure/62.0.1858.1080@62.0.1858.1080" timestamp="1599719165827" />
+    <state x="583" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599718876797">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="583" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1599718876797" />
+    <state x="744" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1599786178662">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="529" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1599749037488" />
+    <state x="744" y="240" key="#com.intellij.ide.util.MemberChooser/62.0.1858.1080@62.0.1858.1080" timestamp="1599786178662" />
+    <state x="771" y="294" key="FileChooserDialogImpl" timestamp="1599789240221">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="771" y="294" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1599789240221" />
+    <state width="1815" height="335" key="GridCell.Tab.0.bottom" timestamp="1599786560670">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1599749590156" />
+    <state width="1815" height="335" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1599786560670" />
+    <state width="1815" height="335" key="GridCell.Tab.0.center" timestamp="1599786560670">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1599749590156" />
+    <state width="1815" height="335" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1599786560670" />
+    <state width="1815" height="335" key="GridCell.Tab.0.left" timestamp="1599786560670">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1599749590155" />
+    <state width="1815" height="335" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1599786560670" />
+    <state width="1815" height="335" key="GridCell.Tab.0.right" timestamp="1599786560670">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1599749590156" />
+    <state width="1815" height="335" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1599786560670" />
+    <state width="1815" height="413" key="GridCell.Tab.1.bottom" timestamp="1599730584798">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="413" key="GridCell.Tab.1.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1599730584798" />
+    <state width="1815" height="413" key="GridCell.Tab.1.center" timestamp="1599730584798">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="413" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1599730584798" />
+    <state width="1815" height="413" key="GridCell.Tab.1.left" timestamp="1599730584798">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="413" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1599730584798" />
+    <state width="1815" height="413" key="GridCell.Tab.1.right" timestamp="1599730584798">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="413" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1599730584798" />
+    <state x="492" y="181" key="SettingsEditor" timestamp="1599730413737">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="492" y="181" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1599730413737" />
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1599728302246">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1599728302246" />
+  </component>
+</project>

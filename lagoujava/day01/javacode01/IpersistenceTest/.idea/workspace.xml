@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6b1e66d0-f838-4387-97eb-d03954f47b69" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="lagou@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="lagou@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="lagou@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="lagou: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ExecutionTargetDialog">
+    <checked>
+      <node key="c9bed8b4-643a-4a90-982a-293b894522ec" />
+    </checked>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gV4sO28gDIqa151z6Y22v3pKBA" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\mySorce\lagoujava\day01\IpersistenceTest\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.IpersistenceTest.test">
+    <configuration name="IpersistenceTest.fs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IpersistenceTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whj.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.whj.test" />
+      <option name="MAIN_CLASS_NAME" value="com.whj.test.IpersistenceTest" />
+      <option name="METHOD_NAME" value="fs" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IpersistenceTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IpersistenceTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whj.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.whj.test" />
+      <option name="MAIN_CLASS_NAME" value="com.whj.test.IpersistenceTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IpersistenceTest.testMySelf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IpersistenceTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whj.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.whj.test" />
+      <option name="MAIN_CLASS_NAME" value="com.whj.test.IpersistenceTest" />
+      <option name="METHOD_NAME" value="testMySelf" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.IpersistenceTest.test" />
+        <item itemvalue="JUnit.IpersistenceTest.fs" />
+        <item itemvalue="JUnit.IpersistenceTest.testMySelf" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:lagou@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:lagou@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@43266a66" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:lagou@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@6ca9a65e" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b1e66d0-f838-4387-97eb-d03954f47b69" name="Default Changelist" comment="" />
+      <created>1598186631063</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598186631063</updated>
+      <workItem from="1598186634726" duration="888000" />
+      <workItem from="1598248045692" duration="9600000" />
+      <workItem from="1598317586730" duration="6897000" />
+      <workItem from="1598425271635" duration="9014000" />
+      <workItem from="1598489004952" duration="23000" />
+      <workItem from="1598489159985" duration="8297000" />
+      <workItem from="1598499667982" duration="147000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="583" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598319900947">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="583" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1598319900947" />
+    <state x="796" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1598496543731">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="796" y="223" key="#com.intellij.ide.util.MemberChooser/62.0.1858.1080@62.0.1858.1080" timestamp="1598496543731" />
+    <state x="721" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598259391807">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="721" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1598259391807" />
+    <state x="772" y="230" key="ExecutionTargetDialog" timestamp="1598320143151">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="772" y="230" key="ExecutionTargetDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1598320143151" />
+    <state x="771" y="229" key="FileChooserDialogImpl" timestamp="1598318085339">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="771" y="229" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1598318085339" />
+    <state width="1815" height="364" key="GridCell.Tab.0.bottom" timestamp="1598499814241">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1598499814241" />
+    <state width="1815" height="364" key="GridCell.Tab.0.center" timestamp="1598499814241">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1598499814241" />
+    <state width="1815" height="364" key="GridCell.Tab.0.left" timestamp="1598499814241">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1598499814241" />
+    <state width="1815" height="364" key="GridCell.Tab.0.right" timestamp="1598499814241">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1598499814241" />
+    <state width="1815" height="364" key="GridCell.Tab.1.bottom" timestamp="1598499814241">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.1.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1598499814241" />
+    <state width="1815" height="364" key="GridCell.Tab.1.center" timestamp="1598499814241">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1598499814241" />
+    <state width="1815" height="364" key="GridCell.Tab.1.left" timestamp="1598499814241">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1598499814241" />
+    <state width="1815" height="364" key="GridCell.Tab.1.right" timestamp="1598499814241">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1598499814241" />
+    <state x="631" y="237" key="NewModule_or_Project.wizard" timestamp="1598317785475">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="631" y="237" key="NewModule_or_Project.wizard/62.0.1858.1080@62.0.1858.1080" timestamp="1598317785475" />
+    <state x="471" y="114" key="SettingsEditor" timestamp="1598317786926">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="471" y="114" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1598317786926" />
+    <state x="366" y="234" key="new project wizard" timestamp="1598317651375">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="366" y="234" key="new project wizard/62.0.1858.1080@62.0.1858.1080" timestamp="1598317651375" />
+  </component>
+</project>

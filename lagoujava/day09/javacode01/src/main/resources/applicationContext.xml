@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            https://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            https://www.springframework.org/schema/context/spring-context.xsd
+">
+    <!-- 开启注解扫描  base-package指定扫描的包路径-->
+    <context:component-scan base-package="com.lagou.edu"/>
+    <!-- 引入外部资源.properties文件 用于读取该文件中的内容: 如：${jdbc.url} -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <!--第三方德鲁伊dataSource配置在这里-->
+    <bean id="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="DriverClassName" value="${jdbc.driver}"></property>
+        <property name="Url" value="${jdbc.url}"></property>
+        <property name="Username" value="${jdbc.username}"></property>
+        <property name="Password" value="${jdbc.password}"></property>
+    </bean>
+
+    <!-- 测试单例bean的懒加载 -->
+    <bean id="lazyResult" class="com.lagou.edu.pojo.Result" init-method="initMethod">
+        <property name="message" value="message"></property>
+        <property name="status" value="status"></property>
+    </bean>
+</beans>

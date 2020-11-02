@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--id标识对象，class是类的全限定类名-->
+    <bean id="accountDao" class="com.lagou.edu.dao.impl.JdbcAccountDaoImpl" init-method="init" destroy-method="destory" scope="singleton">
+<!--        <property name="ConnectionUtils" ref="connectionUtils"></property>-->
+        <constructor-arg name="connectionUtils" ref="connectionUtils"></constructor-arg>
+        <constructor-arg name="names" value="MIKE"></constructor-arg>
+        <constructor-arg name="ages" value="12"></constructor-arg>
+        <!--set注入复杂数据
+        private String[] myArray;
+        private Map<String,String> myMap;
+        private Set<String> mySet;
+        private Properties myProperties;
+
+
+        -->
+        <property name="MyArray">
+            <array>
+                <value>a1</value>  <!-- 引用类型的话，就用<ref></ref> -->
+                <value>b2</value>
+                <value>c3</value>
+            </array>
+        </property>
+        <property name="MyMap">
+            <map>
+                <entry key="k1" value="v1"></entry>
+                <entry key="k2" value="v2"></entry>
+                <entry key="k3" value="v3"></entry>
+            </map>
+        </property>
+        <property name="MySet">
+            <set>
+                <value>set1</value>
+                <value>set2</value>
+            </set>
+        </property>
+        <property name="myProperties">
+            <props>
+                <prop key="p1">vale1</prop>
+                <prop key="p1">vale2</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="transferService" class="com.lagou.edu.service.impl.TransferServiceImpl">
+        <!--set+ name 之后锁定到传值的set方法了，通过反射技术可以调用该方法传入对应的值-->
+        <property name="AccountDao" ref="accountDao"></property>
+    </bean>
+
+    <!--配置新增的三个Bean-->
+<!--    <bean id="connectionUtils" class="com.lagou.edu.utils.ConnectionUtils"></bean>-->
+<!--    <bean id="connectionUtils" class="com.lagou.edu.factory.CreateBeanFactory" factory-method="getInstanceStatic"></bean>-->
+    <bean id="createBeanFactory" class="com.lagou.edu.factory.CreateBeanFactory"></bean>
+    <bean id="connectionUtils" factory-bean="createBeanFactory" factory-method="getInstance" scope="prototype"></bean>
+
+    <!--事务管理器-->
+    <bean id="transactionManager" class="com.lagou.edu.utils.TransactionManager">
+        <property name="ConnectionUtils" ref="connectionUtils"/>
+    </bean>
+
+    <!--代理对象工厂-->
+    <bean id="proxyFactory" class="com.lagou.edu.factory.ProxyFactory">
+        <property name="TransactionManager" ref="transactionManager"/>
+    </bean>
+
+
+
+    <!-- AOP的配置 -->
+    <!-- 配置aop的过程就是把aop的相关术语落地 以下配置切面-->
+    <!--
+        切面 = 切入点(锁定感兴趣的方法) + 方位点(锁定方法中的特殊时机) + 横切逻辑LogUtils
+    -->
+    <aop:config>
+        <aop:aspect id="logAcept" ref="logUtils"><!-- 切面 -->
+            <!--切入点 expression:锁定感兴趣的方法,使用aspectj语法表达式，所有引用类型的类都使用类的全限定类名-->
+            <aop:pointcut id="pt1" expression="execution(public void com.lagou.edu.service.impl.TransferServiceImpl.transfer(java.lang.String, java.lang.String, int))"/>
+            <!--方位点 pointcut-ref：关联切入点-->
+            <aop:before method="beforeMEthod" pointcut-ref="pt1"></aop:before><!--前置增强/通知-->
+            <!--aop:after 最终通知，无论如何都执行 相当于finally-->
+            <aop:after-returning method="successMethod" returning="retValue" pointcut-ref="pt1"/> <!--正常执行通知 相当于try-->
+            <!--aop:after-throwing 异常执行通知 相当于catch-->
+
+            <!-- 环绕通知 -->
+            <aop:around method="arroundMethod" pointcut-ref="pt1"/>
+        </aop:aspect>
+    </aop:config>
+    <!--横切逻辑bean-->
+    <bean id="logUtils" class="com.lagou.edu.utils.LogUtils"></bean>
+</beans>

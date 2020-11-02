@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whj.dao.IUserDao">
+    <!--抽取共用sql语句-->
+    <sql id="whj">
+        select * from user
+    </sql>
+
+
+    <!-- namespace.id 作为sql的唯一标识 -->
+    <select id="findAll" resultType="user"><!--只需表示返回结果的泛型全路径即可-->
+      select * from user
+    </select>
+
+    <select id="findById" parameterType="int" resultType="user">
+      select * from user where id = #{x}
+    </select>
+
+
+    <!-- 添加用户 -->
+    <insert id="saveUser" parameterType="user">
+        insert into user values(#{id},#{username},#{birthday},#{password})
+    </insert>
+
+    <!-- 修改 -->
+    <update id="editUser" parameterType="user">
+        update user set username= #{username} , password = #{password} where id = #{id}
+    </update>
+
+    <!-- 删除 -->
+    <delete id="delUser" parameterType="int">
+        delete from user where id=#{xx} <!-- 基本数据类型的时候，里面的参数名随便写 -->
+    </delete>
+
+    <!-- 多条件组合查询，拼接sql 演示if -->
+    <select id="findByCondition" parameterType="user" resultType="user">
+        select * from user
+            <where>
+                <if test="id !=null">
+                    and id = #{id}
+                </if>
+                <if test="username !=null">
+                    and username = #{username}
+                </if>
+            </where>
+    </select>
+                                    <!--List的别名是list-->
+    <select id="findByIds" parameterType="list" resultType="user">
+        <!--select * from user where id in (1,2,3)-->
+        <include refid="whj"></include>
+        <where>
+            <foreach collection="list" open="id in (" close=")" item="id" separator=","> <!--collection循环的类型-->
+                #{id}
+            </foreach>
+        </where>
+    </select>
+</mapper>

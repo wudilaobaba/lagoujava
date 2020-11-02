@@ -1,0 +1,176 @@
+1.反射：
+  反射基础：
+    Class<?> cls = Class.forName(className);//"reflect.Person02"
+    String classPath = cls.getName();//返回该类的全路径
+    Object obj = cls.newInstance();
+    Method[] y = cls.getDeclaredMethods();//获取该类中的所有方法,是Method数组类型
+    Method[] methods = obj.getClass().getMethods();//获取该实体的素有方法
+    Method m = cls.getDeclaredMethod(methodName, null);//获取其中一个方法（无参方法，有参的话就是参数类型）  //"sayHello"
+    m.getName();//获取方法名
+    Field[] fields = cls.getDeclaredFields();// 获取cls中的字段
+    field.getName();//返回该字段的名字string
+    //如果m是私有方法，那么m.setAccessible(true);//允许调用私有方法
+    m.invoke(obj, null);//调用方法,调用的是obj的sayHi方法,第二个参数是实参
+    String all = method.getDeclaringClass().getName()+"."+method.getName();//返回方法的全路径
+    Dog dog = new Dog();
+    String classPath = dog.getClass().getName();//返回该类的全路径
+
+
+  @Test
+      /**
+       * 使用反射获取字段值
+       */
+      public void testMySelf() throws Exception {
+          User user = new User();
+          user.setUsername("Whj");
+          user.setId(11);
+          user.setPassword("123456789");
+
+          Field declaredField = User.class.getDeclaredField("password");
+          declaredField.setAccessible(true);
+          Object o = declaredField.get(user);
+          System.out.println(o);//"123456789"
+      }
+
+      //根据路径获取原类
+      private Class<?> getClasType(String paramterType) throws ClassNotFoundException {
+          if(paramterType!=null){
+              Class<?> aClass = Class.forName(paramterType);
+              return aClass;
+          }
+          return null;
+      }
+
+      /**
+       * 学习反射
+       * 使用反射进行对象赋值
+       */
+      @Test
+      public void fs() throws Exception {
+          List<String> name = new ArrayList<String>();
+          name.add("id");
+          name.add("username");
+          name.add("birthday");
+          List<Object> value = new ArrayList<Object>();
+          value.add(1);
+          value.add("WW");
+          value.add("2020-01-01");
+
+          Object o = User.class.newInstance();//User类的实体
+
+          for (int i=0;i<name.size();i++) {
+              PropertyDescriptor propertyDescriptor = new PropertyDescriptor(name.get(i), User.class);
+              Method writeMethod = propertyDescriptor.getWriteMethod();
+              writeMethod.invoke(o,value.get(i));
+          }
+          System.out.println((User)o);
+      }
+  }
+
+  关于PropertyDescriptor的使用见PropertyDescriptor文件夹
+
+2.myBatis基本用法心得：
+  01.sql语句是做什么的，就是用什么.xml标签
+  02.mybatis自带的方法的调用也要与sql语句的意义相符
+
+3.java生成min~max之间的随整机数:
+  int y = (int)(Math.random()*(min - (max+1)) + (max+1));//或
+  import java.util.Random;
+  Random rand = new Random();
+  finalNum = rand.nextInt(n+1);生成0,1,...,n中的随机整数(包含n)
+
+4.时间：
+  Calendar的使用：
+  Calendar now = Calendar.getInstance();//当前时间
+  Calendar now1 = (Calendar)now.clone();//时间的拷贝
+  now.add(Calendar.SECOND,seconds);//当前时间加上seconds秒；
+  此时，now就是新的目标时间
+  Date finalTime = now.getTime(); Calendar类型转为Date类型
+  Long now2 = Calendar.getInstance().getTimeInMillis();//当前时间的时间戳(毫秒)
+  Long startTimeStamp = new Date().getTime();//当前时间的时间戳(毫秒)
+
+  DateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+  Date a = df.parse("2020-02-02 15:15:20");
+  Date b = df.parse("2020-01-02 21:14:15");
+  Long min = a.getTime();
+  Long max = b.getTime();
+  Long random = (long)(Math.random()*(min - (max+1)) + (max+1));
+  Date date = new Date(random);
+  //now1.setTime(date); //Calendar设置时间
+  String f = String.format("%tF",date)+" "+String.format("%tT",date);//格式化
+
+5.Array与List的互转
+  List<String> list = Arrays.asList(array);
+  String[] strings = list2.toArray(new String[list2.size()]);
+
+6.Mybatis 单表操作的时候使用注解
+  复杂操作，如动态sql时候使用配置文件
+  当进行DML操作并commit或close后，才会清空一级缓存
+  当commit或close后，二级缓存才会生效，再当commit或close后，所有select的二级缓存就会全部被清空
+  二级缓存基本不会用到，同时连表查询不要使用二级缓存
+  二级缓存缓存的是一个namespace下的缓存数据
+  mybatis-plus是基于spring的
+  注意，尽量写this.sqlSession.close();//用来释放资源
+  Mybatis延迟加载：(底层原理也是动态代理)
+    一对多：建议延迟加载：把关联对象进行延迟加载
+    n对一：使用立即加载
+      局部延迟加载:就是在mapper配置文件的<collection fetchType="lazy"> fetchType="eager"取消延迟加载
+      全局延迟加载：在sqlMapConfiguration.xml中：
+        <settings>
+          <setting name="lazyLoadingEnabled" value="true"/>
+        </settings>
+      局部优先于全局
+  Mybatis的查询结果都是由ResultSetHandler接口的handleResultSet()方法处理的
+  Mybatis延迟加载不要与lombok一起用
+  Mybatis批处理：
+    step01. sqlSessionFactory.openSession(ExecutorType.BATCH);
+    step02. 在配置文件中使用for each标签
+
+7. 解决导入项目后，因JDK或MAVEN版本无法正常运行的问题
+    https://blog.csdn.net/gschen_cn/article/details/106610644
+
+8.当前类获取本地文件的流：
+  InputStream resourceAsStream = BeanFactory.class.getClassLoader().getResourceAsStream("beans.xml");
+
+9.dom4j的使用：
+  <!--dom4j依赖-->
+  <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>1.6.1</version>
+  </dependency>
+  <!--xpath表达式依赖-->
+  <dependency>
+      <groupId>jaxen</groupId>
+      <artifactId>jaxen</artifactId>
+      <version>1.1.6</version>
+  </dependency>
+  InputStream inputStream = BeanFactory.class.getClassLoader().getResourceAsStream("bean.xml");
+  SAXReader saxReader = new SAXReader();
+  try {
+      Document document = saxReader.read(inputStream);
+      Element rootElement = document.getRootElement();
+      List<Element> beanList = rootElement.selectNodes("//bean");
+      String str = beanList.get(i).attributeValue("class");//获取属性值
+      //Element parent = element.getParent(); 获取父元素
+  } catch (Exception e){
+      e.printStackTrace();
+  }
+
+10. Class的两种表达方式：
+  Class<?> cls = obj.getClass();
+  Class<?> cls = Class.forName("com.whj.xxx");
+
+11.遍历Map
+  Map<String,MapStatment> mapStatmentSingle = SqlReader.createMapStatment(in);
+  for (Map.Entry<String, MapStatment> entry : mapStatmentSingle.entrySet()) {
+      String key = entry.getKey();
+      MapStatment value = entry.getValue();
+  }
+
+12.JDK动态代理的使用 见:“JDK动态代理的使用”
+
+13.利用线程来保存数据
+  private ThreadLocal<Connection> threadLocal = new ThreadLocal<>();
+  this.threadLocal.set(connection);//存储当前线程的数据，当前线程只维护一份Connection
+  Connection connection = this.threadLocal.get();//将当前线程保存的数据取出来

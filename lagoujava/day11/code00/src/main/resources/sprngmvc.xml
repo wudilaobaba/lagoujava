@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:mvc="http://www.springframework.org/schema/context"
+        xmlns:mcv="http://www.springframework.org/schema/cache"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+            https://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            https://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/mvc
+            https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+    <!--开始controller扫描  context:component-scan 负责扫描-->
+    <context:component-scan base-package="com.whj.contrller"/>
+
+    <!-- SpringMVC第一大件：视图解析器 把视图信息的前缀、后缀进行配置，也就是success.jsp路径的前缀和后缀-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- /WEB-INF/jsp/success.jsp -->
+        <property name="prefix" value="/WEB-INF/jsp/"/><!--前缀-->
+        <property name="suffix" value=".jsp"/><!--后缀-->
+    </bean>
+
+    <!-- SpringMVC第二大件：处理器适配器，SpringMVC第三大件：处理器映射器 -->
+    <!-- 注册最合适的处理器映射器，处理器适配器 -->
+    <mcv:annotation-driven/>
+
+</beans>

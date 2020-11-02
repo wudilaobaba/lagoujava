@@ -1,0 +1,121 @@
+jdbc的 DDL表 DML增删改 DQL查
+*** sql中有变量就用PreparedStatement，没有变量就用Statement
+//常规套路
+Class.forName("com.mysql.cj.jdbc.Driver");
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lagou?characterEncoding=utf-8", "root", "whjlyn938751");
+String sql = "select * from lagou where name = ?";
+//Statement stat = conn.createStatement();
+PreparedStatement stat = conn.prepareStatement(sql);
+
+//使用数据库连接池的套路：
+<dependencies>
+    <!-- mysql数据库驱动包 数据库请使用：com.mysql.cj.jdbc.Driver -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.19</version>
+    </dependency>
+
+    <!-- c3p0 数据库连接池 -->
+    <dependency>
+        <groupId>c3p0</groupId>
+        <artifactId>c3p0</artifactId>
+        <version>0.9.1.2</version>
+    </dependency>
+
+    <!--junit-->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.10</version>
+    </dependency>
+
+    <!--dom4j-->
+    <dependency>
+        <groupId>dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>1.6.1</version>
+    </dependency>
+
+    <!--jaxen Element mapper = rootElement.selectNodes("//mapper") -->
+    <dependency>
+        <groupId>jaxen</groupId>
+        <artifactId>jaxen</artifactId>
+        <version>1.1.6</version>
+    </dependency>
+</dependencies>
+ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();//c3p0 数据库连接池
+comboPooledDataSource.setDriverClass("com.mysql.jdbc.Driver");
+comboPooledDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/lagou?useSSL=false&serverTimezone=UTC&characterEncoding=UTF8");
+comboPooledDataSource.setUser("root");
+comboPooledDataSource.setPassword("whjlyn938751");
+Connection conn = comboPooledDataSource.getConnection();
+String sql = "create table if not exists student(id int primary key auto_increment,name varchar(10))";
+//Statement stat = conn.createStatement();
+PreparedStatement stat = conn.prepareStatement(sql);
+
+
+
+switch(type) {
+    case "DDL":
+        stat.execute(sql); //如果stat是PreparedStatement类型，那么不加参数
+        stat.close();
+        conn.close();
+        break;
+    case "DML":
+        stat.executeUpdate(sql); //如果stat是PreparedStatement类型，那么不加参数
+        // 返回数字，表示更新成功；抛异常则失败
+        stat.close();
+        conn.close();
+        break;
+    case "DQL":
+        ResultSet rs = stat.executeQuery(sql); //查询到的结果  //如果stat是PreparedStatement类型，那么不加参数
+        //遍历结果
+        while(rs.next()) {
+            int id = rs.getInt("id");
+            String name = rs.getString("name");
+            System.out.println(id+":"+"name");
+        }
+        rs.close();
+        stat.close();
+        conn.close();
+        break;
+}
+
+*** mapper.xml中的paramType实际上就是sqlSession中方法第二个参数的类型！！！！ ****
+
+== 自定义持久层框架的代码实现 ==
+
+javacode01
+  使用方：IDEA - create new project - Maven
+  提供方：IDEA - File - new Module - maven -finish - Next - Parent选择None,路径注意，不要写在其他项目里里  右下角点一下
+  将写好的提供方进行打包，供使用方依赖
+   打包：
+       1.将以下代码粘贴到所有的pom.xml文件中
+       <properties>
+           <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+           <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+           <java.version>1.8</java.version>
+           <maven.compiler.source>1.8</maven.compiler.source>
+           <maven.compiler.target>1.8</maven.compiler.target>
+       </properties>
+       2.选中idea右侧边栏的maven - lifecycle - install
+       这样，打好的jar包就在target文件夹中了
+       3.使用jar包依赖，在pom文件中添加上述jar包坐标即可
+
+   utils中的工具包是现成的
+
+
+javacode02
+  test方法中需要用到DAO的实现类，缺点:获取sqlSession的代码重复，同时存在statmanetId硬编码问题
+     解决：使用代理模式生成Dao层接口的代理实现类
+           SqlSession中写getMapper方法
+
+补充：
+  1.执行的方法后面写.var 就会自动生成返回类型
+  2.list.for就会自动生成以下for循环：
+    for (Element element : list) {}
+  3.可以存储key-value形式的数据还可以使用Properties：
+    Properties properties = new Properties();
+    properties.setProperty("name","whj");
+

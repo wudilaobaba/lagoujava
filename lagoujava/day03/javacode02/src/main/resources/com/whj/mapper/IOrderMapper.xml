@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whj.mapper.IOrderMapper">
+    <resultMap id="orderMap" type="com.whj.pojo.Order">
+        <!-- type:想要映射到哪个实体中 -->
+        <!-- 与sql语句查询结果的映射关系！！！查完以后返回的表！！！ 对照着sql查询结果来写以下result配置 -->
+        <!-- property实体的字段名，column查完以后返回的表中的字段值 -->
+        <result property="id" column="id"/>
+        <result property="orderTime" column="orderTime"/>
+        <result property="total" column="total"/>
+        <result property="uid" column="uid"/>
+        <!-- 将user字段 映射到com.whj.pojo.User -->
+        <association property="user" javaType="com.whj.pojo.User">
+            <result property="id" column="uid"/>
+            <result property="username" column="username"/>
+            <result property="birthday" column="birthday"/>
+            <result property="password" column="password"/>
+        </association>
+    </resultMap>
+
+    <insert id="insertUser" parameterType="com.whj.pojo.User">
+        insert into user values(#{id},#{username},#{birthday},#{password})
+    </insert>
+
+    <!--resultMap:手动配置实体属性与表字段的映射关系-->
+    <select id="findOrderAndUser" resultMap="orderMap">
+        select * from orders o,user u where o.uid = u.id
+    </select>
+</mapper>

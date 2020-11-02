@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e858d9fa-ea72-41f9-9f69-17611ff1532f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hUSxEkBiaIylFivJZorTieodZm" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.Test (4)">
+    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lagou.edu.factory.simpleFactory2.Test" />
+      <module name="lagou-transfer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lagou.edu.factory.simpleFactory2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lagou.edu.proxy.staticProxy.Test" />
+      <module name="lagou-transfer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lagou.edu.proxy.staticProxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lagou.edu.proxy.dynamicproxyfactory.Test" />
+      <module name="lagou-transfer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lagou.edu.proxy.dynamicproxyfactory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lagou.edu.proxy.cgibdynamicproxy.Test" />
+      <module name="lagou-transfer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lagou.edu.proxy.cgibdynamicproxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lagou.edu.factory.simplefactory.Test" />
+      <module name="lagou-transfer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lagou.edu.factory.simplefactory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lagou.edu.proxy.dynamicproxy.Test" />
+      <module name="lagou-transfer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lagou.edu.proxy.dynamicproxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test (4)" />
+        <item itemvalue="Application.Test (3)" />
+        <item itemvalue="Application.Test (3)" />
+        <item itemvalue="Application.Test (2)" />
+        <item itemvalue="Application.Test (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e858d9fa-ea72-41f9-9f69-17611ff1532f" name="Default Changelist" comment="" />
+      <created>1600064422621</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600064422621</updated>
+      <workItem from="1600064428569" duration="10091000" />
+      <workItem from="1600131632005" duration="11410000" />
+      <workItem from="1600153007529" duration="100000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="796" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1600139636632">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="796" y="249" key="#com.intellij.ide.util.MemberChooser/62.0.1858.1080@62.0.1858.1080" timestamp="1600139636632" />
+    <state x="721" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600140604393">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="721" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1600140604393" />
+    <state x="766" y="280" key="FileChooserDialogImpl" timestamp="1600153063819">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="766" y="280" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1600153063819" />
+    <state width="1815" height="364" key="GridCell.Tab.0.bottom" timestamp="1600151340596">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1600151340596" />
+    <state width="1815" height="364" key="GridCell.Tab.0.center" timestamp="1600151340596">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1600151340596" />
+    <state width="1815" height="364" key="GridCell.Tab.0.left" timestamp="1600151340595">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1600151340595" />
+    <state width="1815" height="364" key="GridCell.Tab.0.right" timestamp="1600151340596">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1600151340596" />
+    <state width="1815" height="364" key="GridCell.Tab.1.bottom" timestamp="1600151340596">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.1.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1600151340596" />
+    <state width="1815" height="364" key="GridCell.Tab.1.center" timestamp="1600151340596">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1600151340596" />
+    <state width="1815" height="364" key="GridCell.Tab.1.left" timestamp="1600151340596">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1600151340596" />
+    <state width="1815" height="364" key="GridCell.Tab.1.right" timestamp="1600151340596">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="364" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1600151340596" />
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1600136129248">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1600136129248" />
+  </component>
+</project>

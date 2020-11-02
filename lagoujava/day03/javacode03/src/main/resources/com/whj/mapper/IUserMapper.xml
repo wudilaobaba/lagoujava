@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whj.mapper.IUserMapper">
+    <resultMap id="userMap" type="com.whj.pojo.User">
+        <result property="id" column="uid"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="birthday" column="birthday"/>
+        <!-- 要封装orderList字段 集合，就要使用collection标签 -->
+        <collection property="orderList" ofType="com.whj.pojo.Order"> <!-- ofType 集合中每个元素-->
+            <result property="id" column="id"/>
+            <result property="orderTime" column="orderTime"/>
+            <result property="total" column="total"/>
+            <result property="uid" column="uid"/>
+        </collection>
+    </resultMap>
+
+    <select id="findAll" resultMap="userMap">
+        select * from user u left join orders o on u.id = o.uid
+    </select>
+
+
+
+    <resultMap id="userRoleMap" type="com.whj.pojo.User">
+        <result property="id" column="user_id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="birthday" column="birthday"/>
+        <!-- 要封装orderList字段 集合，就要使用collection标签 -->
+        <collection property="roleList" ofType="com.whj.pojo.Role"> <!-- ofType 集合中每个元素-->
+            <result property="id" column="role_id"/>
+            <result property="roleName" column="rolename"/>
+        </collection>
+    </resultMap>
+    <select id="findAllUserAndRole" resultMap="userRoleMap">
+        select * from user u left join user_role ur on u.id = ur.user_id join role r on ur.role_id = r.id
+    </select>
+</mapper>

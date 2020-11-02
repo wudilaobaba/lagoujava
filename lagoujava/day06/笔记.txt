@@ -1,0 +1,75 @@
+IOC和DI
+  IOC:控制反转 - 对象角度
+  DI:依赖注入 - 容器角度，如果A依赖B,那么创建A的时候，要把B注入到A中
+  解决对象之间的耦合问题
+
+AOP: 面向切面编程
+  OOP解决不了的问题，AOP可以解决，就是想要在每个方法中都执行一个打印语句
+  什么是AOP？
+
+  横切逻辑代码的问题：
+    1.横切代码重复问题
+    2.横切逻辑代码和业务代码混杂在一起，维护不方便
+  好分不好合，如何在不改变原有业务逻辑的基础上，悄无声息的将横切代码应用到原有的业务逻辑中，达到和原来一样的效果
+  AOP解决的问题：在不改变原有业务逻辑的情况下，增加(增加)横切逻辑代码，根本上说是解耦合避免横切逻辑代码重复
+
+  为什么叫面向切面编程：
+    切：横切逻辑：就是面向横切逻辑编程，因为原本代码不可进行修改，只能操作横切逻辑代码
+    面：横切逻辑代码往往要影响的多个方法，每个方法都如同一个点，多个点构成面，有一个面的概念在里面
+
+
+工厂模式：
+  工厂的两个使命：1.构造对象，2.提供获取对象的api
+  com.lagou.edu.factory.simpleFactory & com.lagou.edu.factory.simpleFactory2
+单例模式：com.lagou.edu.singleton 2种：饿汉模式  懒汉模式
+
+工厂模式与xml bean的配合来完成IOC: com.lagou.edu.factory.BeanFactory
+  调用：
+    需要使用实例的时候：BeanFactory.getBean("beanId");
+                      同时实例中的属性也被自动实例化好了
+  <property name="AccountDao" ref="bean的id值">标签中是利用set方法进行传值的,name实际上就是set+name这个方法名
+此时，项目一启动，所有需要实例化的对象(也就是beans.xml中的对象)就自动生成了（工厂模式）
+  使用的时候直接调用静态方法BeanFactory.getBean("beanId");就可以拿到对应的实例以及实例的属性了
+  也实现了面向接口编程，class中的所有属性都是接口类型，不要暴露出实现类
+  当实现类发生变化时，我们只需要修改beans.xml中的类名即可
+
+1.只要不同的数据库链接，那么就不是相同的事务
+  解决：让两次update使用同一个Connection连接
+    因为两次update属于同一线程，保证与当前线程有关系的所有数据库操作都去使用这个Connection连接
+    private ThreadLocal<Connection> threadLocal = new ThreadLocal<>(); // 存储当前线程的数据，当前线程只维护一份Connection
+    threadLocal.set(connection);//把connection对象绑定到当前线程
+    不要使用close关闭连接
+    所有connection都要使用以下进行创建： ConnectionUtils的getCurrentThreadConn()方法
+2.事务控制目前在dao层进行，没有控制到service层
+  解决：把事务控制添加在service层
+    把事务控制添加在service层的方法上
+    com.lagou.edu.utils.TransactionManager 事务管理器类，负责手动事务的开启、提交、回滚
+    手动控制事务：
+      Connection connection = DruidUtils.getInstance().getConnection();
+      connection.setAutoCommit(false);//开启事务，禁止自动提交
+      connection.commit();//提交事务
+      connection.rollback();//回滚事务
+
+
+
+
+静态代理 & 动态代理：com.lagou.edu.proxy
+jdk动态代理是自带的
+cglib动态代理(com.lagou.edu.proxy.cgibdynamicproxy)需要引入以下包：
+  <!--引入cglib依赖包-->
+  <dependency>
+    <groupId>cglib</groupId>
+    <artifactId>cglib</artifactId>
+    <version>2.1_2</version>
+  </dependency>
+注意：使用jdk动态代理，委托方必须实现接口   -  进而实现横切逻辑
+     使用cglib动态代理，委托方可以不实现接口   -  进而实现横切逻辑
+
+beans.xml是进行对象依赖关系控制的，所谓依赖就是A类中有B/C等其他属性
+使用了beans.xml就不需要进行饿汉懒汉单例的设置了
+
+
+
+
+
+

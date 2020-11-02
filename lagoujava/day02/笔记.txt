@@ -1,0 +1,85 @@
+ORM 对象关系映射 操作实体类等同于操作数据库表
+mybatis是个半自动轻量级的ORM框架
+javacode01:
+mybatis基本使用：https://mybatis.org/mybatis-3/
+  创建maven项目
+  step01.
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+    <!--mybatis-->
+    <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>3.4.5</version>
+    </dependency>
+    <!-- mysql数据库驱动包 数据库请使用：com.mysql.cj.jdbc.Driver -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.19</version>
+    </dependency>
+    <!--junit-->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+    </dependency>
+    <!--lombok -->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.12</version>
+        <scope>provided</scope>
+    </dependency>
+
+  step02.
+    创建数据表以及对应的类
+  step03.
+     mybatis核心配置文件:sqlMapConfig.xml
+     xxMapper.xml的配置
+  step04.测试类
+    注意：增删改的时候要进行提交事务：sqlSession.commit();
+    #{}里面的参数名要根据上面的参数类型来决定！！！！！！！！！
+
+mybatis的基本API:
+  sqlSession.selectList();
+  sqlSession.selecOne();
+  sqlSession.insert("user.saveUser",user);
+  sqlSession.update("user.editUser",user);
+  sqlSession.delete("user.delUser",2);
+
+传统DAO层的使用：
+@Test修饰的方法全都是void
+
+javacode02:
+  代理DAO的开发方式(主流！)
+  看：代理开发方式的遵循原则.jpg
+javacode03:
+  sqlMapConfig.xml的深入解析：
+    1.<properties>标签的使用：
+      resource文件夹中创建一个jdbc.properties文件
+    2.<typeAliases>标签的使用：
+      <typeAliases><!--给实体类的全路径名起一个别名,所有mapper.xml中也可以使用该别名-->
+          <!--给com.whj.pojo.User类的全路径名起一个别名:user-->
+          <!--<typeAlias type="com.whj.pojo.User" alias="user"></typeAlias>-->
+          <!--给实体类的所在的包下的所有实体类起别名，使用的时候，就是实体类本身的类名，别名不区分大小写-->
+          <package name="com.whj.pojo"/>
+      </typeAliases>
+
+  xxMapper.xml的深入解析：
+    1.动态sql
+      <if>标签
+      <where>
+      <foreach>
+    2.抽取sql片段
+      在mapper标签里第一行写：
+        <!--抽取共用sql语句-->
+        <sql id="whj">
+          select * from user
+        </sql>
+        使用的时候：将所有的select * from user都改为：<include refid="whj"></include>

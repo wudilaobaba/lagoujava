@@ -1,0 +1,67 @@
+spring IOC的高级特性
+  1.延迟初始化(bean对象创建的延迟)
+    01.之前项目一启动就创建singleton bean - 立即加载 从缓存中拿到bean
+    02.只要getBean的时候就会创建 - 延迟加载(只适用于单例bean)
+      xml实现懒加载:
+        lazy-init="true"
+        <bean id="lazyResult" class="com.lagou.edu.pojo.Result" lazy-init="true">
+            <property name="message" value="message"></property>
+            <property name="status" value="status"></property>
+        </bean>
+        全部bean都懒加载：<beans default-lazy-init="true"
+      注解实现懒加载：
+        类最上面加@Lazy
+      使用场景：基本不用 (一般Bean的使用几率不大的或基本不用话，就使用懒加载)
+
+  2.BeanFactory 和 FactoryBean
+    BeanFactory接口是容器的顶级接⼝，定义了容器的⼀些基础⾏为，负责⽣产和管理Bean的⼀个⼯⼚，具体使⽤它下⾯的⼦接⼝类型，⽐如ApplicationContext；
+    此处我们重点分析FactoryBean
+    spring中的bean有两种：
+      普通bean
+      工厂bean( FactoryBean接口 )
+        可以生成某个类型的bean实例，返回给我们，借助于它来自定义bean的创建过程，如之前的实例化创建bean和静态创建bean
+        可以让我们自定义bean的创建过程，完成复杂bean的定义
+          public interface FactoryBean<T> {
+            @Nullable
+            // 返回FactoryBean创建的Bean实例，如果下面的isSingleton返回true，则该实例会放到Spring容器 的单例对象缓存池中Map
+            T getObject() throws Exception;
+            @Nullable
+            // 返回FactoryBean创建的Bean类型
+            Class<?> getObjectType();
+            // 返回作⽤域是否单例
+            default boolean isSingleton() {
+              return true;
+            }
+          }
+    使用factoryBean: 返回另一个bean
+      STEP01. Company.class
+      STEP02. com.lagou.edu.factory.CompanyFactoryBean
+      STEP03. 配置xml:
+        <bean id="companyBean" class="com.lagou.edu.factory.CompanyFactoryBean">
+            <property name="CompanyInfo" value="大公司,天府五街,1000"
+        </bean>
+      STEP04. 测试
+        Object companyBean = applicationContext.getBean("companyBean");
+        System.out.println(companyBean);//神奇，竟然是Company类型！！！
+        Object companyBean1 = applicationContext.getBean("&companyBean");//想获取到自己本身的FactoryBean，就加一个&字符
+        System.out.println(companyBean1);
+
+  3.后置处理器 - javacode02 测试bean的生命周期的经典测试
+    Spring提供了两种后处理bean的扩展接⼝，分别为 BeanPostProcessor 和 BeanFactoryPostProcessor，两者在使⽤上是有所区别的。
+    ⼯⼚初始化（BeanFactory）—> Bean对象
+    在BeanFactory初始化之后可以使⽤BeanFactoryPostProcessor进⾏后置处理做⼀些事情
+    在Bean对象实例化（并不是Bean的整个⽣命周期完成）之后可以使⽤BeanPostProcessor进⾏后置处
+    理做⼀些事情
+    注意：对象不⼀定是springbean，⽽springbean⼀定是个对象
+    com.lagou.edu.pojo.MyBeanPostProcessor
+
+    Spring Bean生命周期&BeanDefinitions.pdf 这一个整体才算是一个IOC容器
+    BeanDefinition对象：我们在 XML 中定义的 bean标签，Spring 解析 bean 标签成为⼀个 JavaBean，
+    这个JavaBean 就是 BeanDefinition
+    注意：调⽤ BeanFactoryPostProcessor ⽅法时，这时候bean还没有实例化，此时 bean 刚被解析成
+    BeanDefinition对象
+
+
+
+
+

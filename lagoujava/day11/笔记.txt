@@ -1,0 +1,20 @@
+Spring MVC
+  spring提供的用于简化web开发的框架
+  Spring MVC是对servlet的开发
+    作用：1.接收请求 2.返回响应，跳转页面
+
+  springMVC的九大组件：
+    HandlerMapping(可以是类，也可以是方法)
+    HandlerAdapter（处理器适配器）
+    HandlerExceptionResolver
+    ViewResolver 视图解析器
+    RequestToViewNameTranslator
+    LocaleResolver 国际化
+    ThemeResolver 主体
+    MultipartResolver 处理上传请求
+    FlashMapManager 携带数据进行重定向 传递参数
+
+  code01.使用springMVC框架
+    新建一个wen工程
+
+

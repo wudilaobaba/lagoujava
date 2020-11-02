@@ -1,0 +1,54 @@
+Mybatis
+  javacode01:多表 一对一查询
+  订单 - 用户
+    从用户的角度出发，是一对多
+    从订单的角度出发，是一对一
+    select * from orders o,user u where o.uid = u.id;
+    初识resultMap:手动配置实体属性与表字段的映射关系
+  sqlMapConfig.xml中的<mappers>中的另一种配置方式：
+    1.在resource目录下创建一个层级与mapper包一致的文件夹：com/whj/mapper,
+    2.将mapper.xml文件放在mapper文件夹中
+    3.    <mappers>
+              <package name="com.whj.mapper"/>
+          </mappers>
+
+  javacode02: 多表 一对多查询：
+    用户 - 订单
+      查询所有用户，以及对应的订单（一定要包含没有任何订单的用户）
+      多端用List表示
+      select * from user u left join orders o on u.id = o.uid;
+
+  javacode03: 多表 多对多查询
+    用户 - 角色
+    查询用户同时查询出该用户的所有角色
+    left join 就是怕遗漏左边这张表user没有任何角色的数据
+
+
+  javacode04: Mybatis的注解开发 - 无需编写配置文件
+    @Insert @Update @Delete @Select
+    @Result 结果集封装
+    @Results 封装多个结果集
+    @One 一对一
+    @Many 一对多
+  mappers的另一种引入方式：
+    如果使用注解开发，那就要使用以下两种加载方式的任意一种，不可以即注解又xml
+      01.<mapper class="com.whj.mapper.IUserMapper"></mapper>
+      02.还是建议使用<package>的形式！！！！！！！！！
+   注解一对一：查询订单的同时，查询该订单所属的用户
+      select * from orders
+      select * from user where id = #{orders表中的uid}
+   注解一对多：查询用户的同时，查询该用户的所有订单
+      select * from user
+      select * from orders where uid = #{user表的id}
+   注解多对多：
+      select * from user
+      select * from role r, user_role ur where r.id = ur.role_id and ur.user_id = #{user表的id}
+
+  如果模型中的属性名与表中的字段名不一致，那么可使用注解进行处理：
+    @Results({
+            @Result(property = "id",column = "id"),
+            @Result(property = "roleName",column = "role_name")
+    })
+    @Select("select * from role")
+    List<Role> getByUid();
+

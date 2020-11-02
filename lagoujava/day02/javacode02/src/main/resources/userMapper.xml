@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whj.dao.IUserDao">
+    <!-- namespace.id 作为sql的唯一标识 -->
+    <select id="findAll" resultType="com.whj.pojo.User"><!--只需表示返回结果的泛型全路径即可-->
+      select * from user
+    </select>
+
+    <select id="findById" parameterType="java.lang.Integer" resultType="com.whj.pojo.User">
+      select * from user where id = #{x}
+    </select>
+
+
+    <!-- 添加用户 -->
+    <insert id="saveUser" parameterType="com.whj.pojo.User">
+        insert into user values(#{id},#{username},#{birthday},#{password})
+    </insert>
+
+    <!-- 修改 -->
+    <update id="editUser" parameterType="com.whj.pojo.User">
+        update user set username= #{username} , password = #{password} where id = #{id}
+    </update>
+
+    <!-- 删除 -->
+    <delete id="delUser" parameterType="java.lang.Integer">
+        delete from user where id=#{xx} <!-- 基本数据类型的时候，里面的参数名随便写 -->
+    </delete>
+</mapper>
